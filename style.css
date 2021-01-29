@@ -1,0 +1,132 @@
+:root {
+  --violet: #a763cb;
+  --mild-violet: #ecd2fa;
+  --light-orange: #f69377;
+  --light-grey: #4b5666;
+  --light-blue: #eeedff;
+  --light-yellow: #f7c86e;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, var(--violet), var(--light-orange));
+  font-size: 1rem;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.container {
+  width: 50vw;
+  height: 60vh;
+  margin: 20vh auto;
+  background-color: white;
+  box-shadow: 0 1px 7px 1px var(--light-grey);
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 20px 7% 18% calc(75% - 20px);
+}
+
+.window-buttons {
+  display: flex;
+  padding: 5px;
+}
+
+.window-buttons > div {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin: 0 3px;
+}
+
+.window-buttons--close {
+  background-color: #ff605c;
+}
+
+.window-buttons--restore {
+  background-color: #ffbd44;
+}
+
+.window-buttons--minimize {
+  background-color: #00ca4e;
+}
+
+.history,
+.display {
+  text-align: right;
+  padding: 5px 10px;
+}
+
+.history {
+  color: var(--light-grey);
+}
+
+.display {
+  font-size: 3rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  background: var(--light-blue);
+}
+
+.ops1 {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(var(--light-yellow), var(--light-orange));
+  height: 100%;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.ops1 > div {
+  flex-grow: 1;
+}
+
+.actions.nums {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.actions.nums > div,
+.ops1 > div {
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 0px white;
+  border: 1px solid #aaacad71;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ops1 > div {
+  text-shadow: 1px 1px 0 var(--light-grey);
+}
+
+.btn:nth-child(1),
+.btn:nth-child(2),
+.btn:nth-child(3) {
+  background-color: var(--mild-violet);
+}
+
+@media screen and (max-width: 780px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .container {
+    width: 500px;
+  }
+}
